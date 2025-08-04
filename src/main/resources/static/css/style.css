@@ -1,11 +1,23 @@
 body {
+    margin: 2em;
+    font-size: 1.5em;
 }
 
 h1 {
     color: darkblue;
 }
 
+/*.toDo {*/
+/*    text-align: right;*/
+/*}*/
+
+
 .toDo img {
     width: 100%;
     height: auto;
+}
+
+#basicToDo {
+    display: flex;
+    gap: 30px;
 }
