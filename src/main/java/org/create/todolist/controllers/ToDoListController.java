@@ -1,0 +1,33 @@
+package org.create.todolist.controllers;
+
+import org.create.todolist.data.TaskRepository;
+import org.create.todolist.model.Task;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import javax.swing.table.TableRowSorter;
+
+@Controller
+public class ToDoListController {
+
+    @Autowired
+    private TaskRepository taskRepository;
+
+    @PostMapping("/to-do-list")
+    public String saveTask(@RequestParam String title,
+                           @RequestParam(required = false) String description) {
+        taskRepository.save(new Task(title, description));
+        return "redirect:/to-do-list";
+    }
+
+    @GetMapping("/to-do-list")
+    public String getTasks(Model model) {
+        model.addAttribute("task", new Task());
+        return "to-do-list";
+    }
+
+}
