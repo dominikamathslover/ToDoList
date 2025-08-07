@@ -17,6 +17,9 @@ public class Task {
     private String title;
     private String description;
     private LocalDate dueDate;
+
+
+
     private Status status;
 
     public Task(String title, String description) {
@@ -53,4 +56,9 @@ public class Task {
     public void setDescription(String description) {
         this.description = description;
     }
+    public void setStatus(Status status) {
+        this.status = status;
+    }
+
+
 }

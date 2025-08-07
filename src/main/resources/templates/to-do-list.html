@@ -3,11 +3,48 @@
       xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Create your ToDoList!</title>
+    <title>Your ToDoList!</title>
     <link rel="stylesheet" href="/css/normalize.css"/>
-    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+    <link rel="stylesheet" th:href="@{/css/style_todolist.css}"/>
 </head>
 <body>
+
+<body>
+<div class="myDuties">
+    <h1> Your to-do list: </h1>
+<!--    <ol>-->
+<!--        <li th:each="task : ${tasks}">-->
+<!--            <strong th:text="${task.title}">Title</strong>-->
+<!--            <span th:text="${task.description}">Description</span>-->
+<!--        </li>-->
+<!--    </ol>-->
+    <ol>
+        <li th:each="task : ${tasks}">
+            <strong th:text="${task.title}">Title</strong>
+            <span th:text="${task.description}">Description</span>
+                <label class="labelCompleted">
+                    <input type="checkbox"
+                           name="status"
+                           value="COMPLETED"
+                           th:checked="${task.status == 'COMPLETED'}"
+                           onchange="this.form.submit()" />
+                </label>
+        </li>
+
+        Mark as completed
+
+        <button> Sumbit </button>
+    </ol>
+
+
+
+    Mark as completed
+    (the whole list/ one task)
+</div>
+
+
+
+</body>
 
 </body>
 

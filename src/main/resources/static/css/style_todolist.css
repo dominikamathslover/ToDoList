@@ -1,0 +1,22 @@
+body{
+    font-size: 1em;
+    color: darkblue;
+
+    list-style-position: inside;
+    background-image: url("../images/envelope.jpg");
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-attachment: scroll;
+    height: 100em;
+    place-items: center;
+}
+
+.myDuties {
+    position: absolute;
+    top: 50%;
+    font-size: 2em;
+}
+
+
+
