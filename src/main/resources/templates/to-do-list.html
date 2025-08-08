@@ -20,31 +20,54 @@
     <!--        </li>-->
     <!--    </ol>-->
     <div>
+        <!--        <ul class="no-bullets">-->
+        <!--            <li th:each="task : ${tasks}">-->
+        <!--                <label class="form-control">-->
+        <!--                    <span>-->
+        <!--                        <strong th:text="${task.title}">Title</strong>-->
+        <!--                        <span th:text="${task.description}">Description</span>-->
+        <!--                    </span>-->
+        <!--                    <input type="checkbox" name="checkbox"/>-->
+        <!--                </label>-->
+        <!--            </li>-->
+
+        <!--        </ul>-->
+
         <ul class="no-bullets">
             <li th:each="task : ${tasks}">
-                <label class="form-control">
-                    <span>
-                        <strong th:text="${task.title}">Title</strong>
-                        <span th:text="${task.description}">Description</span>
-                    </span>
-                    <input type="checkbox" name="checkbox"/>
-                </label>
-            </li>
+                <form action="/to-do-list" method="post">
+                    <input type="hidden" name="id" th:value="${task.id}"/>
 
+                    <label class="form-control">
+                <span>
+                    <strong th:text="${task.title}">Title</strong>
+                    <span th:text="${task.description}">Description</span>
+                </span>
+
+                        <input type="checkbox"
+                               name="completed"
+                               th:checked="${task.completed}"
+                               onchange="this.form.submit()"/>
+                    </label>
+                </form>
+            </li>
         </ul>
 
         <br>
-        <label class="form-control">
-            <span> Mark all as completed </span>
-            <input type="checkbox" name="checkbox"/>
-        </label>
+        <form action="/to-do-list" method="post">
+            <label class="form-control">
+                <span>Mark all as completed</span>
+                <input type="checkbox" name="markAllCompleted" value="true"
+                       onchange="this.form.submit()" />
+            </label>
+        </form>
     </div>
-    <div> Download 
-    <img class="icon" th:src="@{/images/pdf.png}" alt="export pdf" style="width: 30px; height: 30px">
-    <img class="icon" th:src="@{/images/image.png}" alt="export an image" style="width: 30px; height: 30px">
+    <div> Download
+        <img class="icon" th:src="@{/images/pdf.png}" alt="export pdf" style="width: 30px; height: 30px">
+        <img class="icon" th:src="@{/images/image.png}" alt="export an image" style="width: 30px; height: 30px">
     </div>
-</div>
 
+</div>
 
 
 </body>
