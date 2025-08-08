@@ -4,7 +4,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import org.springframework.lang.NonNull;
 
 import java.time.LocalDate;
 
@@ -18,15 +17,13 @@ public class Task {
     private String description;
     private LocalDate dueDate;
 
-
-
-    private Status status;
+    private boolean completed;
 
     public Task(String title, String description) {
         this.title = title;
         this.description = description;
         this.dueDate = LocalDate.now();
-        this.status = Status.IN_PROGRESS;
+        this.completed = false;
     }
 
     public Task() {
@@ -37,28 +34,31 @@ public class Task {
         return title;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
-    public LocalDate getDueDate() {
-        return dueDate;
-    }
-
-    public Status getStatus() {
-        return status;
-    }
-
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public String getDescription() {
+        return description;
     }
 
     public void setDescription(String description) {
         this.description = description;
     }
-    public void setStatus(Status status) {
-        this.status = status;
+
+    public boolean isCompleted() {
+        return completed;
     }
 
+    public void setCompleted(boolean completed) {
+        this.completed = completed;
+    }
 
+    public Long getId() {
+        return id;
+    }
+
+    public LocalDate getDueDate() {
+        return dueDate;
+    }
 }
