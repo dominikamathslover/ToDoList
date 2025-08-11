@@ -30,7 +30,7 @@ Features & Endpoints
   POST /to-do-list
 
     Parameters:
-      markAllCompleted (boolean or flag)
+      markAllCompleted (boolean)
 
 5.  Download Task List as PDF
   GET /to-do-list/pdf
