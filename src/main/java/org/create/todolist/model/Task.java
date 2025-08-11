@@ -4,17 +4,25 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.time.LocalDate;
 
+@Setter
+@Getter
 @Entity
 public class Task {
     @Id
+    @Setter(AccessLevel.NONE)
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     private String title;
     private String description;
+
+    @Setter(AccessLevel.NONE)
     private LocalDate dueDate;
 
     private boolean completed;
@@ -30,35 +38,12 @@ public class Task {
         this.title = "default title";
     }
 
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public boolean isCompleted() {
-        return completed;
-    }
-
-    public void setCompleted(boolean completed) {
-        this.completed = completed;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public LocalDate getDueDate() {
-        return dueDate;
+    @Override
+    public String toString() {
+        return String.format("%s %s %s | %s",
+                title,
+                description,
+                dueDate.toString(),
+                completed ? "Completed" : "In Progress");
     }
 }
