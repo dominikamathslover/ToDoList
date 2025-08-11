@@ -8,7 +8,7 @@ H2 Database Console: http://localhost:8080/h2-console
 
 Features & Endpoints
 1. Add a New Task
-  POST /to-do-list
+  POST  http://localhost:8080/to-do-list
 
     Parameters:
       title (string, required)
@@ -18,22 +18,22 @@ Features & Endpoints
       !id 
 
 2. Display All Tasks
-  GET /to-do-list
+  GET  http://localhost:8080/to-do-list
 
 3.  Mark a Task as Completed
-  POST /to-do-list
+  POST  http://localhost:8080/to-do-list
 
      Parameters:
       id (long, required) – ID of the task to mark as completed
 
 5. Mark All Tasks as Completed
-  POST /to-do-list
+  POST  http://localhost:8080/to-do-list
 
     Parameters:
       markAllCompleted (boolean)
 
 5.  Download Task List as PDF
-  GET /to-do-list/pdf
+  GET  http://localhost:8080/to-do-list/pdf
 
 
 Technologies Used
