@@ -37,5 +37,4 @@ Features & Endpoints
 
 
 Technologies Used
-Java / Spring Boot / Maven / H2 Database / Spring Data JPA
-Thymeleaf / PDF generation library 
+Java / Spring Boot / Maven / H2 Database / Spring Data JPA / Thymeleaf / PDF generation library 
