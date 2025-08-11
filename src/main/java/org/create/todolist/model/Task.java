@@ -38,6 +38,10 @@ public class Task {
         this.title = "default title";
     }
 
+    public void setCompleted(boolean completed) {
+        this.completed = completed;
+    }
+
     @Override
     public String toString() {
         return String.format("%s %s %s | %s",
