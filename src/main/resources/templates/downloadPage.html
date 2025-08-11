@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Your ToDoList!</title>
+</head>
+<body>
+
+<div class="myDuties">
+    <h1> Your to-do list: </h1>
+    <ol>
+        <li th:each="detail : ${details}" th:text="${detail}"></li>
+    </ol>
+
+</div>
+
+</body>
+
+</html>

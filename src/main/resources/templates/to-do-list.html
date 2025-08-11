@@ -2,7 +2,7 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"/>
     <title>Your ToDoList!</title>
     <link rel="stylesheet" th:href="@{/css/normalize.css}"/>
     <link rel="stylesheet" th:href="@{/css/style_todolist.css}"/>
@@ -13,25 +13,14 @@
 <body>
 <div class="myDuties">
     <h1> Your to-do list: </h1>
-    <!--    <ol>-->
-    <!--        <li th:each="task : ${tasks}">-->
-    <!--            <strong th:text="${task.title}">Title</strong>-->
-    <!--            <span th:text="${task.description}">Description</span>-->
-    <!--        </li>-->
-    <!--    </ol>-->
-    <div>
-        <!--        <ul class="no-bullets">-->
-        <!--            <li th:each="task : ${tasks}">-->
-        <!--                <label class="form-control">-->
-        <!--                    <span>-->
-        <!--                        <strong th:text="${task.title}">Title</strong>-->
-        <!--                        <span th:text="${task.description}">Description</span>-->
-        <!--                    </span>-->
-        <!--                    <input type="checkbox" name="checkbox"/>-->
-        <!--                </label>-->
-        <!--            </li>-->
+<!--    -->
+    <ul>
+        <li th:each="detail : ${details}" th:text="${detail}"></li>
+    </ul>
 
-        <!--        </ul>-->
+<!--    -->
+
+    <div>
 
         <ul class="no-bullets">
             <li th:each="task : ${tasks}">
@@ -58,12 +47,14 @@
             <label class="form-control">
                 <span>Mark all as completed</span>
                 <input type="checkbox" name="markAllCompleted" value="true"
-                       onchange="this.form.submit()" />
+                       onchange="this.form.submit()"/>
             </label>
         </form>
     </div>
     <div> Download
-        <img class="icon" th:src="@{/images/pdf.png}" alt="export pdf" style="width: 30px; height: 30px">
+        <a th:href="@{/to-do-list/pdf}" download>
+            <img class="icon" th:src="@{/images/pdf.png}" alt="export pdf" style="width: 30px; height: 30px">
+        </a>
         <img class="icon" th:src="@{/images/image.png}" alt="export an image" style="width: 30px; height: 30px">
     </div>
 
