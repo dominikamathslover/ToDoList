@@ -1,0 +1,12 @@
+body{
+    margin: 1em;
+    font-size: 1em;
+    color: darkblue;
+
+    list-style-position: inside;
+    background-image: url("../images/pexels-empty3.jpg");
+    background-size: 100vw;
+    height: 100em;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}

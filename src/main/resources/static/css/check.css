@@ -24,9 +24,7 @@ input[type="checkbox"] {
     place-content: center;
 }
 
-/*.form-control + .form-control {*/
-/*    margin-top: 1em;*/
-/*}*/
+
 
 input[type="checkbox"]::before {
     content: "";

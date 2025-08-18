@@ -9,17 +9,20 @@ body{
     background-position: top center;
     background-attachment: scroll;
     height: 100em;
+    display: grid;
     place-items: center;
 }
+
 
 .myDuties {
     position: absolute;
     top: 50%;
-    font-size: 2em;
+    font-size: 5vw;
 }
 
-#form-control {
-    color: aquamarine;
+.double-line {
+    border: none;
+    border-top: 4px double #333;
+    margin: 1.5em 0.5em 0.5em 0.5em;
 }
-
 

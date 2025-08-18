@@ -7,18 +7,19 @@
     <link rel="stylesheet" th:href="@{/css/normalize.css}"/>
     <link rel="stylesheet" th:href="@{/css/style_todolist.css}"/>
     <link rel="stylesheet" th:href="@{/css/check.css}"/>
+    <link rel="stylesheet" th:href="@{/css/iconStyle.css}"/>
+    <link rel="stylesheet" th:href="@{/css/description.css}"/>
 </head>
 <body>
 
-<body>
 <div class="myDuties">
     <h1> Your to-do list: </h1>
-<!--    -->
+    <!--    -->
     <ul>
         <li th:each="detail : ${details}" th:text="${detail}"></li>
     </ul>
 
-<!--    -->
+    <!--    -->
 
     <div>
 
@@ -43,25 +44,31 @@
         </ul>
 
         <br>
+        <hr class="double-line">
+
         <form action="/to-do-list" method="post">
             <label class="form-control">
-                <span>Mark all as completed</span>
+                <span id="desc1" class="description">Mark all as completed</span>
                 <input type="checkbox" name="markAllCompleted" value="true"
                        onchange="this.form.submit()"/>
             </label>
         </form>
     </div>
-    <div> Download
+    <hr class="double-line">
+    <div> <span class="description">Download</span>
         <a th:href="@{/to-do-list/pdf}" download>
-            <img class="icon" th:src="@{/images/pdf.png}" alt="export pdf" style="width: 30px; height: 30px">
+            <img class="icon" th:src="@{/images/pdf.png}" alt="export pdf" />
         </a>
-<!--        <img class="icon" th:src="@{/images/image.png}" alt="export an image" style="width: 30px; height: 30px">-->
+    </div>
+    <hr class="double-line">
+    <div> <span class="description">Add more tasks to your list</span>
+        <a th:href="@{/}">
+            <img class="icon" th:src="@{/images/home.png}" alt="home page" />
+        </a>
     </div>
 
 </div>
 
-
-</body>
 
 </body>
 
