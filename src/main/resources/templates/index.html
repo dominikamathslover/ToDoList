@@ -7,6 +7,7 @@
     <link rel="stylesheet" th:href="@{/css/normalize.css}"/>
     <link rel="stylesheet" th:href="@{/css/style.css}"/>
     <link rel="stylesheet" th:href="@{/css/iconStyle.css}"/>
+    <link rel="stylesheet" th:href="@{/css/bodyimage.css}">
 </head>
 <body>
 <h1>Add your duties here:</h1>
@@ -14,23 +15,30 @@
     <div class="toDoForm">
         <form action="/to-do-list" method="post">
             <label class="titleform" for="title">Title:</label>
-            <input type="text" id="title" name="title" required><br><br>
+            <input type="text" id="title" name="title" required>
+            <br>
 
             <label class="titleform" for="description">Description:</label><br>
             <input type="text" id="description" name="description"><br><br>
 
-            <button type="submit"> Save a task </button>
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <button type="submit">
+                    <img class="bigger-icon" th:src="@{/images/coffee-cup.png}" alt="save a task"/>
+                </button>
+                <a th:href="@{/to-do-list}">
+                    <img class="bigger-icon" th:src="@{/images/expresso.png}" alt="home page"/>
+                </a>
+            </div>
         </form>
+
+
     </div>
-    <div class="toDo"><img src="/images/pexels-todo.jpg" alt="toDoList"></div>
+
+
 
 </div>
 
-<div>
-    <button onclick="window.location.href='http://localhost:8080/to-do-list'">
-         Check your to-do list here:
-    </button>
-</div>
+
 
 
 </body>
