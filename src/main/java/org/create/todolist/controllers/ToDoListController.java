@@ -21,8 +21,17 @@ public class ToDoListController {
     @GetMapping("/to-do-list")
     public String getTasks(Model model) {
         List<Task> tasks = taskRepository.findAll();
+        if (tasks.isEmpty()) {
+            return "redirect:/empty-list";
+        }
+
         model.addAttribute("tasks", tasks);
         return "to-do-list";
+    }
+
+    @GetMapping("/empty-list")
+    public String showEmptyListPage() {
+        return "empty-list";
     }
 
     @PostMapping(value = "/to-do-list", params = {"!markAllCompleted", "!id"})
