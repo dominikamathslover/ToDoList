@@ -50,4 +50,8 @@ public class Task {
                 dueDate.toString(),
                 completed ? "Completed" : "In Progress");
     }
+
+    public Long getId() {
+        return id;
+    }
 }
