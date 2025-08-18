@@ -7,7 +7,7 @@ Getting Started
 H2 Database Console: http://localhost:8080/h2-console
 
 Features & Endpoints
-1. Add a New Task
+1. Add a new task
   POST  http://localhost:8080/to-do-list
 
     Parameters:
@@ -17,24 +17,27 @@ Features & Endpoints
       !markAllCompleted 
       !id 
 
-2. Display All Tasks
+2. Display all tasks
   GET  http://localhost:8080/to-do-list
 
-3.  Mark a Task as Completed
+3.  Mark a task as completed
   POST  http://localhost:8080/to-do-list
 
      Parameters:
       id (long, required) – ID of the task to mark as completed
 
-5. Mark All Tasks as Completed
+5. Mark all tasks as completed
   POST  http://localhost:8080/to-do-list
 
     Parameters:
       markAllCompleted (boolean)
 
-5.  Download Task List as PDF
+5. Download a task list as PDF
   GET  http://localhost:8080/to-do-list/pdf
+
+6. Message if the to-do list is empty
+  GET http://localhost:8080/empty-list"
 
 
 Technologies Used
-Java / Spring Boot / Maven / H2 Database / Spring Data JPA / Thymeleaf / PDF generation library 
+Java / Spring Boot / Maven / H2 Database / Spring Data JPA / Thymeleaf / JUnit5 / MockMvc / PDF generation library 
