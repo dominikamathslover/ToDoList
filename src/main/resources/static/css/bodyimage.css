@@ -1,0 +1,8 @@
+body{
+    background-image: url("../images/pexels-todo.jpg");
+    background-size: 100vw;
+    height: 100em;
+    overflow: hidden;
+    /*background-repeat: no-repeat;*/
+
+}

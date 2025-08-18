@@ -1,28 +1,45 @@
 body{
     font-size: 1em;
-    color: darkblue;
-
+    color: #463325;
     list-style-position: inside;
     background-image: url("../images/envelope.jpg");
-    background-size: 100% auto;
-    background-repeat: no-repeat;
     background-position: top center;
     background-attachment: scroll;
-    height: 100em;
     display: grid;
     place-items: center;
+    background-size: 100% auto;
+    height: 100em;
+    background-repeat: no-repeat;
+    margin: 1em;
 }
-
 
 .myDuties {
     position: absolute;
     top: 50%;
-    font-size: 5vw;
+    font-size: 2.5vw;
 }
 
 .double-line {
     border: none;
     border-top: 4px double #333;
-    margin: 1.5em 0.5em 0.5em 0.5em;
+    margin-top: 1em;
 }
+
+
+@media (max-width: 750px) {
+    body {
+
+        background-size: 100% auto;
+        height: 45em;
+        background-repeat: repeat;
+    }
+    .myDuties {
+        position: absolute;
+        top: 30%;
+        font-size: 2.5vw;
+    }
+}
+
+
+
 
