@@ -9,6 +9,7 @@
     <link rel="stylesheet" th:href="@{/css/check.css}"/>
     <link rel="stylesheet" th:href="@{/css/iconStyle.css}"/>
     <link rel="stylesheet" th:href="@{/css/description.css}"/>
+    <link rel="stylesheet" th:href="@{/css/noprint.css}"/>
 </head>
 <body>
 
@@ -44,27 +45,21 @@
         </ul>
 
         <br>
-        <hr class="double-line">
+        <hr class="double-line no-print">
 
         <form action="/to-do-list" method="post">
-            <label class="form-control">
+            <label class="form-control no-print">
                 <span id="desc1" class="description">Mark all as completed</span>
                 <input type="checkbox" name="markAllCompleted" value="true"
                        onchange="this.form.submit()"/>
             </label>
         </form>
     </div>
-    <hr class="double-line">
-    <div> <span class="description">Download</span>
-        <a th:href="@{/to-do-list/pdf}" download>
-            <img class="icon" th:src="@{/images/pdf.png}" alt="export pdf" />
-        </a>
-    </div>
-    <hr class="double-line">
-    <div> <span class="description">Add more tasks to your list</span>
-        <a th:href="@{/}">
-            <img class="icon" th:src="@{/images/home.png}" alt="home page" />
-        </a>
+    <hr class="double-line no-print">
+    <div class="no-print">
+        <span><a th:href="@{/to-do-list/pdf}" download><img class="bigger-icon" th:src="@{/images/pdf.png}" alt="export pdf" /></a></span>
+        <span><a th:href="@{/}"><img class="bigger-icon" th:src="@{/images/home.png}" alt="home page" /></a></span>
+        <span><a href="#" onclick="window.print()" title="Print this page"><img th:class="bigger-icon" src="/images/printer.png" alt="Print" /></a></span>
     </div>
 
 </div>
